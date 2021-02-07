@@ -1,39 +1,6 @@
-nom du module python utilisé pour les tests unitaires.(le fichier requirement.txt sera rempli comme suit :
 beautifulsoup4
 flask
 redis
 requests
 
-dans le jenkins je dois ajouter :  
-stage('build environment'){
-// Python dependencies
-sh'pip install -r requirements.txt' } 
- stage('Compile') {
-                sh "python -m compileall ."
-            }
 
-//puis  
-stage ('test'){
-sh 'python unit-test.py'
-//ou bien sh’python -m unittest discover’
-
-} 
-//pour executer le fichier python des tests
- stage('Dependency vulnerability tests') {
-            
-                echo "-=- run dependency vulnerability tests -=-"
-                sh "safety check"
-            }
- stage('Code inspection & quality gate') {
-                echo "-=- run code inspection & quality gate -=-"
-                sh "pylama"
-            }
-             stage("phpunit") {
-        // Run PHPUnit
-        sh 'vendor/bin/phpunit'
-    }
-stage("integration_tests") {
-    // some additional integration tests
-
-            sh 'vendor/bin/behat'
-        }
