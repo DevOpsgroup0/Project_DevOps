@@ -16,7 +16,8 @@ services:
     environment:
       - API_ENDPOINT=http://api:5000/api/
   push_stage:
+   
+    image: "sabsih/dockercourse:v1"
     build: .
-    image: https://hub.docker.com/repository/docker/sabsih/dockercourse:v1
   redis:
     image: redis
