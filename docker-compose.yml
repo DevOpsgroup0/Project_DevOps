@@ -16,6 +16,8 @@ services:
     environment:
       - API_ENDPOINT=http://api:5000/api/
   push: 
-    image: "https://hub.docker.com/repository/docker/sabsih/dockercourse:ourApp"
+    command: docker exec -it -u 0 82100e34a075
+    command: docker login -u sabsih -p DC2JC34sZfTF7M3
+    image: https://hub.docker.com/repository/docker/sabsih/dockercourse:ourApp
   redis:
     image: redis
