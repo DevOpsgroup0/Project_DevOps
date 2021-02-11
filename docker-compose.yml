@@ -15,5 +15,7 @@ services:
       - "8081:80"
     environment:
       - API_ENDPOINT=http://api:5000/api/
+  push: 
+    image: "https://hub.docker.com/repository/docker/sabsih/dockercourse"
   redis:
     image: redis
